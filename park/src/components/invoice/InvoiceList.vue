@@ -201,7 +201,7 @@ export default {
         queryResult(item) {
             this.$apis
                 .queryInvoiceApi({
-                    lsh: item.park_invoice_info.lsh
+                    id: item.park_invoice_info.id
                 })
                 .then(res => {
                     if (res.code === 200) {

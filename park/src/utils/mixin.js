@@ -120,13 +120,19 @@ export default {
         let token = localStorage.getItem("token");
         let ua = window.navigator.userAgent.toLowerCase();
 		let type = getquery.getQueryString("type");
-		let code = getquery.getQueryString("code");
+        let code = getquery.getQueryString("code");
+        console.log(code);
 		if(type == "home"){
-            if(navigator.userAgent.indexOf('iPhone') != -1){
-                let wechaturl = window.location + '';
-                localStorage.setItem("wechaturl",wechaturl);
-            }
             window.location.href = "http://house.zjlaishang.com:9001?code="+code
+        }else if(type == "house2"){
+            window.location.href = "http://newhouse.zjlaishang.com?code="+code;
+            // if(code == null){
+            //     console.log(code);
+            //     console.log('///////')
+            //     return false;
+            // }else{
+            //     window.location.href = "http://newhouse.zjlaishang.com?code="+code
+            // }
         }
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
             if (to.path === "/" || to.path==="/error") {
